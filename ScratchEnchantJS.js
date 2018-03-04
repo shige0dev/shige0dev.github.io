@@ -740,27 +740,27 @@ window.addEventListener("message", receiveMessage, false);
     descriptor = {
         blocks: [
       // Block type, block name, function name, param1 default value, param2 default value
-      ['w', 'New 3D World %m.Scenes Width: %n Height: %n', 'initWorld', "Grass", 10, 10,ext],
+      ['w', '３Dシーン作成 %m.Scenes Width: %n Height: %n', 'initWorld', "Grass", 10, 10,ext],
       //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-      ['', 'Add Camera Controls %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
+      ['', 'カメラ制御 %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
 			//The camera orbit block to allow users to orbit the camera around a given point
-			['', " Camera Look At: %s  %m.Sides","cameraFallow", "Variable", "Back"],
+			['', " 注視点 %s  %m.Sides","cameraFallow", "Variable", "Back"],
 			     //The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
-      ['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
+      ['', " 移動  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
       //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
-			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
+			['', "回転 %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
 			//NEEDS TO BE FIXED LEAVE OUT FOR NOW!!!!
       //['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
 //
 
 
-			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
+			['r', 'オブジェクト %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
       
       ['r', '3D Text: %s Size: %n Location: X: %n Y: %n Z: %n', 'createText', 'Hello World', '.5','0','0','0'],
       //__TIER_THREE__  ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
       ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '0','0','0'],
-      ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n Diameter: %n' ,'addPlanet','Earth','0','0','0','1'],
+      ['r', '惑星作成 %m.Planets X: %n Y: %n Z: %n 直径 %n' ,'addPlanet','Earth','0','0','0','1'],
 		        //Creates a new empty matrial and returns its object ID
       //__TIER_THREE__  ['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
       //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
@@ -768,9 +768,9 @@ window.addEventListener("message", receiveMessage, false);
 
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 
-      ['', "Object: %s Go To X: %n Y: %n Z: %n" , 'goto', "Variable", 0, 0, 0],
+      ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
 
-      ['', "Rotate %s %m.Axis3 Degrees: %n " , 'rotateShape', "Variable", "Y", 1],
+      ['', " %s を　%m.Axis3 Degrees: %n　へ回転 " , 'rotateShape', "Variable", "Y", 1],
       
 			//Adds a smothe movment control to any given object
 			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
