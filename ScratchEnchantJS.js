@@ -763,11 +763,11 @@ window.addEventListener("message", receiveMessage, false);
       //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
       //__TIER_THREE__  ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
 
-      ['', " %s を　%m.Move　に移動 %n Steps" , 'moveShape', "Variable", "Left", 1],
+      ['', " %s を %m.Move に移動 %n Steps" , 'moveShape', "Variable", "Right", 1],
 
       ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
 
-      ['', " %s を　%m.Axis3 Degrees: %n　へ回転 " , 'rotateShape', "Variable", "Y", 1],
+      ['', " %s を %m.Axis3 軸にDegrees: %n　へ回転 " , 'rotateShape', "Variable", "Y", 1],
       
 			//Adds a smothe movment control to any given object
 			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
@@ -794,22 +794,22 @@ window.addEventListener("message", receiveMessage, false);
         ],
 		
 		menus: {
-		    Scenes: ['Grid','Grass','Space','Blank'],
+		Scenes: ['Grid','Grass','Space','Blank'],
         Fonts:['helvetiker'],
         Toggle: ['Off'],
-				Camera: ['Perspective'],
-				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
-				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
-				CameraControls: ["First Person", "Mouse/Trackball"],
+		Camera: ['Perspective'],
+		CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
+		CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
+		CameraControls: ["First Person", "Mouse/Trackball"],
         Sides: ["Back", "Front"],
-				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
-				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
-		    Planets: ['Earth', 'Sun','Moon', 'Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto'],	
+		Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
+		Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
+		Planets: ['Earth', 'Sun','Moon', 'Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto'],	
         Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
-		    Images:['Crate', 'Brick', 'Earth', 'Moon'],
-		    Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
-		    Charecters: ['Marine','Car', 'Cat', 'Cat1', 'Lego Vader', 'Pirate Ship'],
-		    Lights: ['Ambient','Directional','Point'],
+		Images:['Crate', 'Brick', 'Earth', 'Moon'],
+		Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
+		Charecters: ['Marine','Car', 'Cat', 'Cat1', 'Lego Vader', 'Pirate Ship'],
+		Lights: ['Ambient','Directional','Point'],
         Axis3: ['X','Y','Z'],
         Axis2: ['X','Y'],
         MouseOptions: ['Click', 'Down', 'Up', 'Double Click'],
