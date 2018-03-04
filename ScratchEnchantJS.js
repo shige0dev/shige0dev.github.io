@@ -744,7 +744,7 @@ window.addEventListener("message", receiveMessage, false);
       //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
       ['', 'カメラ制御 %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
 			//The camera orbit block to allow users to orbit the camera around a given point
-			['', " 注視点を %s の %m.Sides　にする","cameraFallow", "Variable", "Back"],
+	 ['', " 注視点を %s の %m.Sides　にする","cameraFallow", "Variable", "Back"],
 			     //The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
       ['', " %m.Move  に　%n steeps 移動","moveCamera", "Direction", "1"],
       //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
@@ -763,7 +763,8 @@ window.addEventListener("message", receiveMessage, false);
       //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
       //__TIER_THREE__  ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
 
-      ['', " %s を %m.Move に移動 %n Steps" , 'moveShape', "Variable", "Right", 1],
+      ['', " %s を %m.Move に移動 %n Steps" , 'moveShape', "Variable", "Direction", 1],
+      ['', " %s を %m.Move に %n 移動" , 'moveShape', "Variable", "Direction", 1],
 
       ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
 
