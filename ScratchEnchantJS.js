@@ -744,29 +744,26 @@ window.addEventListener("message", receiveMessage, false);
       //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
       ['', 'カメラ制御 %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
 			//The camera orbit block to allow users to orbit the camera around a given point
-			['', " 注視点 %s  %m.Sides","cameraFallow", "Variable", "Back"],
+			['', " 注視点を %s の %m.Sides　にする","cameraFallow", "Variable", "Back"],
 			     //The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
-      ['', " 移動  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
+      ['', " %m.Move  に　%n steeps 移動","moveCamera", "Direction", "1"],
       //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
-			['', "回転 %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
+			['', "%m.CameraRotation に　%n Degrees　回転" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
 			//NEEDS TO BE FIXED LEAVE OUT FOR NOW!!!!
       //['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
-//
 
-
-			['r', 'オブジェクト %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
-      
-      ['r', '3D Text: %s Size: %n Location: X: %n Y: %n Z: %n', 'createText', 'Hello World', '.5','0','0','0'],
+　      ['r', ' %m.Shapes を作成　Size: %n %n %n Location: %n:%n:%n', 'createShape', 'Cube', '1','1','1','0','0','0'],      
+        ['r', '3D Text: %s を作成　Size: %n Location: %n:%n:%n', 'createText', 'Hello World', '.5','0','0','0'],
       //__TIER_THREE__  ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
-      ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '0','0','0'],
-      ['r', '惑星作成 %m.Planets X: %n Y: %n Z: %n 直径 %n' ,'addPlanet','Earth','0','0','0','1'],
+        ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '0','0','0'],
+        ['r', '惑星作成 %m.Planets X: %n Y: %n Z: %n 直径 %n' ,'addPlanet','Earth','0','0','0','1'],
 		        //Creates a new empty matrial and returns its object ID
       //__TIER_THREE__  ['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
       //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
       //__TIER_THREE__  ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
 
-      ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
+      ['', " %s を　%m.Move　に移動 %n Steps" , 'moveShape', "Variable", "Left", 1],
 
       ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
 
