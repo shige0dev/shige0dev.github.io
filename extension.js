@@ -12,8 +12,9 @@
         return window.open('http://www.google.com','subWindow','width=320,height=320');
     };
 
-    ext.close_window = function(window){
-        window.close();
+    ext.close_window = function(w){
+        console.log(w);
+        w.close();
     };
 
     // Block and block menu descriptions
