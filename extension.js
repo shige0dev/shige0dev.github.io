@@ -15,7 +15,8 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'open window %s', 'open_window', 'Boston'],
+            ['r', 'open window %s', 'open_window', 'Boston'],
+            ['w', 'close window %s', 'close_window', 'window'],
         ]
     };
 
