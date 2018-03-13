@@ -12,12 +12,14 @@
 
     ext.open_window = function(location) {
         //var win = window.open('http://www.google.com','subWindow','width=320,height=320');
+        console.log('open_window');
         return win;
     };
 
     ext.close_window = function(w){
-        console.log(win);
-        win.close();
+        console.log('close_window');
+        console.log(win.name);
+        window.close();
     };
 
     // Block and block menu descriptions
