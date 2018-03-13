@@ -8,26 +8,24 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.get_temp = function(location, callback) {
-        // Make an AJAX call to the Open Weather Maps API
-        $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
-              dataType: 'jsonp',
-              success: function( weather_data ) {
-                  // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
-                  callback(temperature);
-              }
-        });
+    ext.open_window = function(location) {
+        var win = window.open('http://www.google.com','subWindow','width=320,height=320');
+        return win;
+    };
+
+    ext.close_window = function(w){
+        console.log(w);
+        w.close();
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
+            ['r', 'open window %s', 'open_window', 'Boston'],
+            ['w', 'close window %s', 'close_window', 'window'],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Weather extension', descriptor, ext);
+    ScratchExtensions.register('openWindow', descriptor, ext);
 })({});
