@@ -8,8 +8,12 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.open_window = function(location, callback) {
+    ext.open_window = function(location) {
         return window.open('http://www.google.com','subWindow','width=320,height=320');
+    };
+
+    ext.close_window = function(window){
+        window.close();
     };
 
     // Block and block menu descriptions
