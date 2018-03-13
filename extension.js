@@ -9,7 +9,7 @@
     };
 
     ext.open_window = function(location, callback) {
-        window.open('http://www.google.com','subwin','width=400,height=400');
+        return window.open('http://www.google.com','subWindow','width=320,height=320');
     };
 
     // Block and block menu descriptions
