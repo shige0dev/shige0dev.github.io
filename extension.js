@@ -18,8 +18,9 @@
 
     ext.close_window = function(w){
         console.log('close_window');
-        console.log(win.name);
+        console.log(1000);
         window.close();
+        win.innerHeight = 600;
     };
 
     // Block and block menu descriptions

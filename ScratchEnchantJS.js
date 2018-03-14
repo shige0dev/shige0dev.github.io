@@ -131,31 +131,24 @@ window.addEventListener("message", receiveMessage, false);
     shapes = new Array();
     raycaster = new Array();
     //--------------------------
-    
-		
-  
-		win = window.open (liveURL, "", "width=400, height=400");
+	win = window.open (liveURL, "", "width=400, height=400");
     if(win==null){
       var browserData = navigator.userAgent;
       if(browserData.indexOf("Safari")>-1){
-      alert("This extension must open in a separate window. \rTo run please enable pop-ups from this site. \rTo enable PopUps: \rClick Safari, \rClick Preferences, \rClick security, \rUncheck Block pop-up windows, \rThen refresh page. ");
+        alert("This extension must open in a separate window. \rTo run please enable pop-ups from this site. \rTo enable PopUps: \rClick Safari, \rClick Preferences, \rClick security, \rUncheck Block pop-up windows, \rThen refresh page. ");
       }
-  }
+    }
     //newSession = false;
-		/*
-		**Checks Browser Version in win returns null
-		**
-		*/
-		
-		//**//
-		
-        setTimeout(function (){
-			var message = "INIT_"+scene+","+width+","+height;
-			win.postMessage(message,liveURL);
-			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
-        }, 3000);
-
-	};
+	/*
+	**Checks Browser Version in win returns null
+	**
+	*/	
+    setTimeout(function (){
+		var message = "INIT_"+scene+","+width+","+height;
+		win.postMessage(message,liveURL);
+		callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
+    }, 3000);
+};
 
 	
 
@@ -163,7 +156,7 @@ window.addEventListener("message", receiveMessage, false);
 
 	//Rotates the camera in a user supplied direction by a user supplied number of degrees
 	ext.rotateCamera = function(direction, degrees){
-		        //logginWindow.postMessage("message", "http://03c3573.netsolhost.com/Scratch3d/Scratch3d%20Login%20Window/index.html");
+		//logginWindow.postMessage("message", "http://03c3573.netsolhost.com/Scratch3d/Scratch3d%20Login%20Window/index.html");
 		//Checks to make sure the user has supplied a Direction 
 		if(direction != "Direction" && degrees != 0){
 		//Creates the message to be sent to the main.html 
@@ -190,7 +183,7 @@ window.addEventListener("message", receiveMessage, false);
 		win.postMessage(message, liveURL);
 	}
 	
-	ext.createShape = function(shape, l,w,h, locX,locY, locZ, PhysicBool){
+	ext.createShape = function(shape, l,w,h, locX,locY,locZ, PhysicBool){
 		var shapeID = generatID(shape);
 		shapes.push(shapeID);
 		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+PhysicBool+','+shapeID;
@@ -739,60 +732,57 @@ window.addEventListener("message", receiveMessage, false);
 	// Block and block menu descriptions
     descriptor = {
         blocks: [
-      // Block type, block name, function name, param1 default value, param2 default value
-      ['w', '３Dシーン作成 %m.Scenes Width: %n Height: %n', 'initWorld', "Grass", 10, 10,ext],
-      //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-      ['', 'カメラ制御 %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
-			//The camera orbit block to allow users to orbit the camera around a given point
-	 ['', " 注視点を %s の %m.Sides　にする","cameraFallow", "Variable", "Back"],
-			     //The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
-      ['', " %m.Move  に　%n steeps 移動","moveCamera", "Direction", "1"],
-      //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
-			['', "%m.CameraRotation に　%n Degrees　回転" , 'rotateCamera', "Direction", "1"],
-			//The camera orbit block to allow users to orbit the camera around a given point
-			//NEEDS TO BE FIXED LEAVE OUT FOR NOW!!!!
-      //['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
+    // Block type, block name, function name, param1 default value, param2 default value
+    ['w', '３Dシーン作成 %m.Scenes Width: %n Height: %n', 'initWorld', "Grass", 10, 10,ext],
+    //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
+    ['', 'カメラ制御 %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '10', '2'],
+	//The camera orbit block to allow users to orbit the camera around a given point
+	['', " 注視点を %s の %m.Sides　にする","cameraFallow", "Variable", "Back"],
+	//The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
+    ['', " %m.Move  に　%n steeps 移動","moveCamera", "Direction", "1"],
+    //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
+    ['', "%m.CameraRotation に　%n Degrees　回転" , 'rotateCamera', "Direction", "1"],
+	//The camera orbit block to allow users to orbit the camera around a given point
+	//NEEDS TO BE FIXED LEAVE OUT FOR NOW!!!!
+     //['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
 
-　      ['r', ' %m.Shapes を作成　Size: %n %n %n Location: %n:%n:%n', 'createShape', 'Cube', '1','1','1','0','0','0'],      
-        ['r', '3D Text: %s を作成　Size: %n Location: %n:%n:%n', 'createText', 'Hello World', '.5','0','0','0'],
-      //__TIER_THREE__  ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
-        ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '0','0','0'],
-        ['r', '惑星作成 %m.Planets X: %n Y: %n Z: %n 直径 %n' ,'addPlanet','Earth','0','0','0','1'],
-		        //Creates a new empty matrial and returns its object ID
-      //__TIER_THREE__  ['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
-      //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
-      //__TIER_THREE__  ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
+    ['r', ' %m.Shapes を作成　Size: %n %n %n Location: %n:%n:%n', 'createShape', 'Cube', '1','1','1','0','0','0'],      
+    ['r', '3D Text: %s を作成　Size: %n Location: %n:%n:%n', 'createText', 'Hello World', '.5','0','0','0'],
+    //__TIER_THREE__  ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
+    ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '0','0','0'],
+    ['r', '惑星作成 %m.Planets X: %n Y: %n Z: %n 直径 %n' ,'addPlanet','Earth','0','0','0','1'],
+	//Creates a new empty matrial and returns its object ID
+    //__TIER_THREE__  ['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
+    //__TIER_THREE__  ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
+    //__TIER_THREE__  ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
 
-      ['', " %s を %m.Move に移動 %n Steps" , 'moveShape', "Variable", "Direction", 1],
-      ['', " %s を %m.Move に %n 移動" , 'moveShape', "Variable", "Direction", 1],
-
-      ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
-
-      ['', " %s を %m.Axis3 軸にDegrees: %n　へ回転 " , 'rotateShape', "Variable", "Y", 1],
+    ['', " %s を %m.Move に移動 %n Steps" , 'moveShape', "Variable", "Direction", 1],
+    ['', " %s を %m.Move に %n 移動" , 'moveShape', "Variable", "Direction", 1],
+    ['', " %s を X: %n Y: %n Z: %n　へ移動" , 'goto', "Variable", 0, 0, 0],
+    ['', " %s を %m.Axis3 軸にDegrees: %n　へ回転 " , 'rotateShape', "Variable", "Y", 1],
       
-			//Adds a smothe movment control to any given object
-			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
+	//Adds a smothe movment control to any given object
+	['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
 			
-			//Sets a given material to a given object
-			//__TIER_THREE__  ['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
+	//Sets a given material to a given object
+	//__TIER_THREE__  ['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
 
-			//__TIER_THREE__  ['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
-			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-      //__TIER_THREE__  ['h', "When Mouse %m.MouseOptions", 'mouseEvent', 'Click'],
-      //__TIER_THREE__  ['r', "Mouse %m.Axis2", "mousePostion","X"], 
-      //__TIER_THREE__  ['r', "On Clicked Get Object", "getObjectOnClick"], 
+	//__TIER_THREE__  ['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
+	['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
+    //__TIER_THREE__  ['h', "When Mouse %m.MouseOptions", 'mouseEvent', 'Click'],
+    //__TIER_THREE__  ['r', "Mouse %m.Axis2", "mousePostion","X"], 
+    //__TIER_THREE__  ['r', "On Clicked Get Object", "getObjectOnClick"], 
 
-			//__TIER_THREE__  ['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
-      //__TIER_THREE__  ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
-      //__TIER_THREE__  ['r', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
-      //__TIER_THREE__  ['', "Physics, Set Friction Of: %s To: %n", "setFriction","Variable","0.8"],
-      //__TIER_THREE__  ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
-      //__TIER_THREE__  ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
-      //__TIER_THREE__  ['', "Physics, Set Linear Velocity Of: %s To X: %n Y: %n Z: %n", "setLinearVelocity","Variable","0","0","0"],
-      //__TIER_THREE__  ['', "Physics, Set Angular Velocity Of: %s To X: %n Y: %n Z: %n", "setAngularVelocity","Variable","0","0","0"],
-      ['b', "%s Touching %s", "isTouching","Variable","Variable"],
-       
-        ],
+	//__TIER_THREE__  ['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
+    //__TIER_THREE__  ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
+    //__TIER_THREE__  ['r', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
+    //__TIER_THREE__  ['', "Physics, Set Friction Of: %s To: %n", "setFriction","Variable","0.8"],
+    //__TIER_THREE__  ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
+    //__TIER_THREE__  ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
+    //__TIER_THREE__  ['', "Physics, Set Linear Velocity Of: %s To X: %n Y: %n Z: %n", "setLinearVelocity","Variable","0","0","0"],
+    //__TIER_THREE__  ['', "Physics, Set Angular Velocity Of: %s To X: %n Y: %n Z: %n", "setAngularVelocity","Variable","0","0","0"],
+    ['b', "%s Touching %s", "isTouching","Variable","Variable"],       
+    ],
 		
 		menus: {
 		Scenes: ['Grid','Grass','Space','Blank'],
