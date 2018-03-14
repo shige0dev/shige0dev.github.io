@@ -20,7 +20,7 @@
         console.log('close_window');
         console.log(1000);
         window.close();
-        win.innerHeight = 600;
+        win.innerHeight = w;
     };
 
     // Block and block menu descriptions
