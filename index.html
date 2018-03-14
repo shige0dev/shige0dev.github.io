@@ -7,11 +7,11 @@
     // ページの読み込みを待つ
     window.addEventListener('load', init);
 
-    function init() {
-
+    function init() { 
+      console.log(100);
       // サイズを指定
-      const width = 960;
-      const height = 540;
+      const width = 100;
+      const height = 100;
 
       // レンダラーを作成
       const renderer = new THREE.WebGLRenderer({
@@ -28,7 +28,7 @@
       camera.position.set(0, 0, +1000);
 
       // 箱を作成
-      const geometry = new THREE.BoxGeometry(400, 400, 400);
+      const geometry = new THREE.BoxGeometry(200, 400, 400);
       const material = new THREE.MeshNormalMaterial();
       const box = new THREE.Mesh(geometry, material);
       scene.add(box);
