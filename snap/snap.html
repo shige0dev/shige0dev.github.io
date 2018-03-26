@@ -21,6 +21,12 @@
 		<script type="text/javascript" src="cloud.js?version=2018-03-14"></script>
 		<script type="text/javascript" src="sha512.js?version=2018-03-09"></script>
 		<script type="text/javascript" src="FileSaver.min.js?version=2018-03-09"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.js" ></script>
+		
+		<!-- <script src="three.js"></script> -->
+		
+		<script src="OrbitControls.js"></script>
 		<script type="text/javascript">
 			var world;
 			window.onload = function () {
@@ -33,9 +39,89 @@
         		requestAnimationFrame(loop);
 				world.doOneCycle();
 			}
-		</script>
-	</head>
+		</script>:
+
 	<body style="margin: 0;">
-		<canvas id="world" tabindex="1" style="position: absolute;" />
+		<canvas id="world" tabindex="1" style="position: absolute;"></canvas>		       
+	
+		<script type="text/javascript">
+    		let ctx;
+    		let renderer;
+			let canvas;
+			let scene;
+			let camera;
+			let sub_win;
+
+			function openSubWin() { 
+    			sub_win = window.open("subWindow.html", "subWindow",  "directories=0,location=0,menubar=0,toolbar=0,status=0,resizable=0,scrollbars=0,width=480,height=320");
+				//setSubwin();
+			}
+
+    		function setSubWin() { 
+				//３Dレンダラを作成
+    			renderer = new THREE.WebGLRenderer({antialias:true});
+				renderer.setClearColor("#000000");
+				renderer.setSize( sub_win.window.innerWidth, sub_win.window.innerHeight );
+				renderer.shadowMap.enabled = true;
+				renderer.shadowMapSoft = true;
+				
+				var container = sub_win.document.getElementById( 'ThreeJS' );
+				container.appendChild( renderer.domElement );
+
+				//２Dキャンバスを作成
+    			canvas=sub_win.document.createElement('canvas');
+    			canvas.width = sub_win.window.innerWidth;
+    			canvas.height = sub_win.window.innerHeight;
+    			canvas.style.position = "absolute";
+    			canvas.style.left = "0px";
+    			 canvas.style.top = "0px";
+    			 ctx = canvas.getContext("2d");
+				container.appendChild( canvas );
+
+
+      			// シーンを作成
+      			scene = new THREE.Scene();
+
+      			// カメラを作成
+      			camera = new THREE.PerspectiveCamera(45, sub_win.window.innerWidth / sub_win.window.innerHeight, 1,2000 );
+      			camera.position.set(0, 0, +1000);
+
+				controls = sub_win.createControls(camera);
+
+				var render = function() {
+					requestAnimationFrame( render );
+					//controls.update();	 
+					renderer.render(scene, camera);
+				};
+
+				render();
+			};
+
+			window.addEventListener('resize', onResize);
+
+
+
+function onResize() {
+	// サイズを取得
+  const width = sub_win.innerWidth;
+  const height =sub_win.innerHeight;
+
+  // レンダラーのサイズを調整する
+  renderer.setPixelRatio(sub_win.devicePixelRatio);
+  renderer.setSize(width, height);
+
+  // カメラのアスペクト比を正す
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+}
+
+
+
+//    		function drawSubWin(){
+			//初期モデル描画
+//          }
+
+		  </script>
 	</body>
+</head>
 </html>

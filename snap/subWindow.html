@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>ThreeJS</title>
+	</head>
+	
+	<script src="three.js"></script>
+	<script src="OrbitControls.js"></script>
+
+	<style>
+	body{
+		margin:0;
+		overflow:hidden;
+	}
+	</style>
+
+	<body>
+		<div id="ThreeJS"></div>
+		<script>
+			window.onload = function() {window.opener.setSubWin();}
+
+			function createControls(camera){
+				return new THREE.OrbitControls(camera);
+			}
+
+		// リサイズイベント発生時に実行
+			window.addEventListener('resize', window.opener.onResize);
+
+		</script>	
+	</body>
+
+
+</html>
+	
