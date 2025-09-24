@@ -1,51 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
-  <script>
-    // ページの読み込みを待つ
-    window.addEventListener('load', init);
-
-    function init() { 
-      console.log(100);
-      // サイズを指定
-      const width = 400;
-      const height = 400;
-
-      // レンダラーを作成
-      const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('#myCanvas')
-      });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(width, height);
-
-      // シーンを作成
-      const scene = new THREE.Scene();
-
-      // カメラを作成
-      const camera = new THREE.PerspectiveCamera(80, width / height);
-      camera.position.set(600, 200, +1000);
-
-      // 箱を作成
-      const geometry = new THREE.BoxGeometry(200, 300, 400);
-      const material = new THREE.MeshNormalMaterial();
-      const box = new THREE.Mesh(geometry, material);
-      scene.add(box);
-
-      tick();
-
-      // 毎フレーム時に実行されるループイベントです
-      function tick() {
-        box.rotation.y += 0.01;
-        renderer.render(scene, camera); // レンダリング
-
-        requestAnimationFrame(tick);
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <title>メトロノーム</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="myCanvas"></canvas>
+  <h1>メトロノーム</h1>
+  <div id="bpm-display">60</div>
+  <input type="range" id="bpm-slider" min="50" max="100" value="60">
+  <br>
+  <button id="toggle-btn">START</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
