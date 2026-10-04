@@ -1,0 +1,115 @@
+body {
+    user-select: none;
+    background: #030712;
+    color: #f8fafc;
+    font-family: system-ui, sans-serif;
+    touch-action: manipulation;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bg-grid {
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+#cable-canvas {
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.drop-highlight-valid {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: white !important;
+    z-index: 40;
+}
+
+.drop-highlight-copy-valid {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.7) !important;
+    background: rgba(234, 179, 8, 0.2) !important;
+    border-color: #eab308 !important;
+    z-index: 40;
+}
+
+.drop-highlight-invalid {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.7) !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: #ef4444 !important;
+    z-index: 40;
+}
+
+.selected-module {
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.5) !important;
+    border-color: #d946ef !important;
+    border-width: 2px !important;
+}
+
+.native-vslider {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 96px;
+    cursor: pointer;
+    padding: 0 1px;
+    touch-action: none;
+    background: transparent;
+}
+
+.selected-module .port,
+.has-selected-module .port {
+    pointer-events: none !important;
+    transform: none !important;
+}
+
+.port-selected {
+    border: none !important;
+    border-color: transparent !important;
+    transform: none !important;
+    box-shadow: 0 0 4px 1.5px rgba(255, 255, 255, 0.9) !important;
+    z-index: 30;
+}
+
+.pat-track-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@keyframes pat-marquee-slow {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.pat-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: pat-marquee-slow 28s linear infinite;
+    will-change: transform;
+}
+
+.pat-tok {
+    display: inline-block;
+    padding: 0 2px;
+    border-radius: 2px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.pat-tok-active {
+    background-color: #facc15 !important; /* bright yellow */
+    color: #020617 !important; /* dark slate text */
+    box-shadow: 0 0 5px 1px rgba(250, 204, 21, 0.9) !important;
+    border-radius: 2px !important;
+    transform: none !important;
+    z-index: 10;
+    transition: none !important;
+}
+
+
