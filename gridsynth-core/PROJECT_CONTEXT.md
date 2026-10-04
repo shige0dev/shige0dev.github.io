@@ -219,6 +219,7 @@ GridSynth を AI（LLM）や外部エージェント、外部DAW/ハードウェ
 | **`04_RANDOM_SH_DELAY`** | S&H（サンプル＆ホールド）ランダムCV + KEY手動ピッチ加算 + ディレイパッチ |
 | **`05_SUBPATCH_MULTI_GROOVE`** | 4トラック構成（Acid Bass, Kick, Snare, Hi-Hat, Clap）をサブパッチで内包したグルーヴボックス |
 | **`06_STRUDEL_HOUSE_BASSLINE`** | PATモジュール（Strudel mini-notation）を活用した16ステップオクターブベースライン |
+| **`07_DUB_TECHNO_DEEP_SPACE`** | 16拍ロングサイクルコードスタブ、ディープサブベース、S&Hフィルター揺らぎ、サブパッチによる控えめなダブドラム |
 
 ---
 

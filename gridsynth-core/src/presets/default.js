@@ -453,5 +453,358 @@ export const getDefaultPresets = () => ({
                 ]
             }
         }
+    },
+    '07_DUB_TECHNO_DEEP_SPACE': {
+        bpm: 118,
+        pages: {
+            "0": {
+                name: "DEEP SPACE DUB",
+                slots: {
+                    "0": "PAT1",
+                    "1": "VCO1",
+                    "2": "VCF1",
+                    "3": "ADSR1",
+                    "4": "VCA1",
+                    "5": "DELAY1",
+                    "6": "REVERB1",
+                    "7": "CLK1",
+                    "8": "SH1",
+                    "9": "LFO1",
+                    "10": "CLK2",
+                    "11": "VCO2",
+                    "12": "MATH2_1",
+                    "13": "ADSR2",
+                    "14": "ADSR3",
+                    "15": "VCA2",
+                    "16": "PAT2",
+                    "17": "VCO3",
+                    "18": "ADSR4",
+                    "19": "VCA3",
+                    "20": "NOISE1",
+                    "21": "LFO2",
+                    "22": "VCF2",
+                    "23": "VCA4",
+                    "24": "DELAY2",
+                    "25": "CLK3",
+                    "26": "NOISE2",
+                    "27": "VCF3",
+                    "28": "ADSR5",
+                    "29": "VCA5",
+                    "30": "CLK4",
+                    "31": "FOLD1",
+                    "32": "ADSR6",
+                    "33": "VCA6",
+                    "34": "MIX1",
+                    "37": "MIX2",
+                    "39": "SPK1"
+                },
+                modules: {
+                    "PAT1": {
+                        "type": "PAT",
+                        "pattern": "[~ c2] ~ ~ [~ c2]  ~ ~ [~ eb2] ~  ~ ~ ~ [~ c2]  ~ [~ g2] ~ ~  [~ c2] ~ ~ ~  ~ [~ eb2] ~ ~  ~ ~ [~ d2] ~  ~ ~ ~ [~ bb1]",
+                        "cycleBeats": 16,
+                        "gateLen": 0.65,
+                        "presetName": "Low Dub Chord"
+                    },
+                    "VCO1": {
+                        "type": "VCO",
+                        "channels": 1,
+                        "quantize": true,
+                        "wave": "sawtooth",
+                        "freq1": 65.41
+                    },
+                    "VCF1": {
+                        "type": "VCF",
+                        "cutoff": 480,
+                        "q": 3.8,
+                        "filterType": "lowpass",
+                        "modDepth": 1600
+                    },
+                    "ADSR1": {
+                        "type": "ADSR",
+                        "attack": 0.004,
+                        "attackCurve": -0.2,
+                        "decay": 0.42,
+                        "decayCurve": -0.4,
+                        "sustain": 0.06,
+                        "release": 0.45,
+                        "releaseCurve": -0.5
+                    },
+                    "VCA1": {
+                        "type": "VCA",
+                        "level": 0,
+                        "cvDepth": 1
+                    },
+                    "DELAY1": {
+                        "type": "DELAY",
+                        "delayTime": 0.38,
+                        "feedback": 0.68,
+                        "mix": 0.55
+                    },
+                    "REVERB1": {
+                        "type": "REVERB",
+                        "time": 5.2,
+                        "damp": 2200,
+                        "mix": 0.52
+                    },
+                    "CLK1": {
+                        "type": "CLK",
+                        "div": "/4",
+                        "pulseWidthMs": 40,
+                        "limitPct": 90
+                    },
+                    "SH1": {
+                        "type": "SH",
+                        "glide": 0.45,
+                        "scale": 0.22,
+                        "polarity": "unipolar"
+                    },
+                    "LFO1": {
+                        "type": "LFO",
+                        "waveType": "sine",
+                        "polarity": "bipolar",
+                        "syncMode": "free",
+                        "rate": 0.04,
+                        "depth": 0.35
+                    },
+                    "CLK2": {
+                        "type": "CLK",
+                        "div": "x1",
+                        "pulseWidthMs": 25,
+                        "limitPct": 90
+                    },
+                    "VCO2": {
+                        "type": "VCO",
+                        "channels": 1,
+                        "quantize": false,
+                        "wave": "sine",
+                        "freq1": 48
+                    },
+                    "MATH2_1": {
+                        "type": "MATH2",
+                        "mode": "MULTI",
+                        "valA": 0.0,
+                        "valB": 2.8
+                    },
+                    "ADSR2": {
+                        "type": "ADSR",
+                        "attack": 0.0005,
+                        "attackCurve": -0.5,
+                        "decay": 0.042,
+                        "decayCurve": -0.75,
+                        "sustain": 0.0,
+                        "release": 0.02,
+                        "releaseCurve": -0.7
+                    },
+                    "ADSR3": {
+                        "type": "ADSR",
+                        "attack": 0.0005,
+                        "attackCurve": -0.5,
+                        "decay": 0.42,
+                        "decayCurve": -0.4,
+                        "sustain": 0.0,
+                        "release": 0.06,
+                        "releaseCurve": -0.4
+                    },
+                    "VCA2": {
+                        "type": "VCA",
+                        "level": 0,
+                        "cvDepth": 1
+                    },
+                    "PAT2": {
+                        "type": "PAT",
+                        "pattern": "c1 ~ ~ [c1 c1]  ~ ~ c1 ~  ~ ~ eb1 ~  ~ [bb0 c1] ~ ~  c1 ~ ~ c1  ~ ~ [~ c1] ~  ~ ~ d1 ~  ~ ~ c1 ~",
+                        "cycleBeats": 16,
+                        "gateLen": 0.8,
+                        "presetName": "Deep Rolling Sub"
+                    },
+                    "VCO3": {
+                        "type": "VCO",
+                        "channels": 1,
+                        "quantize": true,
+                        "wave": "triangle",
+                        "freq1": 32.7
+                    },
+                    "ADSR4": {
+                        "type": "ADSR",
+                        "attack": 0.005,
+                        "attackCurve": 0,
+                        "decay": 0.32,
+                        "decayCurve": -0.3,
+                        "sustain": 0.45,
+                        "release": 0.18,
+                        "releaseCurve": 0
+                    },
+                    "VCA3": {
+                        "type": "VCA",
+                        "level": 0,
+                        "cvDepth": 1
+                    },
+                    "NOISE1": {
+                        "type": "NOISE",
+                        "noiseType": "white",
+                        "tone": 4500,
+                        "level": 0.8
+                    },
+                    "LFO2": {
+                        "type": "LFO",
+                        "waveType": "sine",
+                        "polarity": "bipolar",
+                        "syncMode": "free",
+                        "rate": 0.12,
+                        "depth": 1.6
+                    },
+                    "VCF2": {
+                        "type": "VCF",
+                        "filterType": "bandpass",
+                        "cutoff": 1200,
+                        "q": 5.5,
+                        "modDepth": 2600
+                    },
+                    "VCA4": {
+                        "type": "VCA",
+                        "level": 0.35,
+                        "cvDepth": 0
+                    },
+                    "DELAY2": {
+                        "type": "DELAY",
+                        "delayTime": 0.25,
+                        "feedback": 0.62,
+                        "mix": 0.45
+                    },
+                    "CLK3": {
+                        "type": "CLK",
+                        "div": "x2",
+                        "pulseWidthMs": 15,
+                        "limitPct": 90
+                    },
+                    "NOISE2": {
+                        "type": "NOISE",
+                        "noiseType": "white",
+                        "tone": 8500,
+                        "level": 0.7
+                    },
+                    "VCF3": {
+                        "type": "VCF",
+                        "filterType": "highpass",
+                        "cutoff": 7500,
+                        "q": 2.8,
+                        "modDepth": 0
+                    },
+                    "ADSR5": {
+                        "type": "ADSR",
+                        "attack": 0.0005,
+                        "attackCurve": -0.5,
+                        "decay": 0.045,
+                        "decayCurve": -0.85,
+                        "sustain": 0.0,
+                        "release": 0.02,
+                        "releaseCurve": -0.8
+                    },
+                    "VCA5": {
+                        "type": "VCA",
+                        "level": 0,
+                        "cvDepth": 1
+                    },
+                    "CLK4": {
+                        "type": "CLK",
+                        "div": "x1",
+                        "pulseWidthMs": 20,
+                        "limitPct": 90
+                    },
+                    "FOLD1": {
+                        "type": "FOLD",
+                        "channels": 1,
+                        "freq1": 220,
+                        "wave": "square",
+                        "fold": 2.4,
+                        "bias": 0.12
+                    },
+                    "ADSR6": {
+                        "type": "ADSR",
+                        "attack": 0.0005,
+                        "attackCurve": -0.5,
+                        "decay": 0.065,
+                        "decayCurve": -0.8,
+                        "sustain": 0.0,
+                        "release": 0.02,
+                        "releaseCurve": -0.8
+                    },
+                    "VCA6": {
+                        "type": "VCA",
+                        "level": 0,
+                        "cvDepth": 1
+                    },
+                    "MIX1": {
+                        "type": "MIX",
+                        "channels": 4,
+                        "lvl1": 0.85,
+                        "lvl2": 0.42,
+                        "lvl3": 0.32,
+                        "lvl4": 0.28
+                    },
+                    "MIX2": {
+                        "type": "MIX",
+                        "channels": 4,
+                        "lvl1": 0.92,
+                        "lvl2": 0.88,
+                        "lvl3": 0.78,
+                        "lvl4": 0.0
+                    },
+                    "SPK1": {
+                        "type": "SPK",
+                        "masterVol": 0.32
+                    }
+                },
+                connections: [
+                    { from: { moduleId: "PAT1", port: "cv_out" }, to: { moduleId: "VCO1", port: "cv_in" } },
+                    { from: { moduleId: "PAT1", port: "gate_out" }, to: { moduleId: "ADSR1", port: "gate_in" } },
+                    { from: { moduleId: "VCO1", port: "wave_out" }, to: { moduleId: "VCF1", port: "wave_in" } },
+                    { from: { moduleId: "ADSR1", port: "cv_out" }, to: { moduleId: "VCF1", port: "cv_in" } },
+                    { from: { moduleId: "CLK1", port: "gate_out" }, to: { moduleId: "SH1", port: "trig_in" } },
+                    { from: { moduleId: "SH1", port: "cv_out" }, to: { moduleId: "VCF1", port: "cv_in" } },
+                    { from: { moduleId: "LFO1", port: "cv_out" }, to: { moduleId: "VCF1", port: "cv_in" } },
+                    { from: { moduleId: "VCF1", port: "wave_out" }, to: { moduleId: "VCA1", port: "wave_in" } },
+                    { from: { moduleId: "ADSR1", port: "cv_out" }, to: { moduleId: "VCA1", port: "cv_in" } },
+                    { from: { moduleId: "VCA1", port: "wave_out" }, to: { moduleId: "DELAY1", port: "wave_in" } },
+                    { from: { moduleId: "DELAY1", port: "wave_out" }, to: { moduleId: "REVERB1", port: "wave_in" } },
+                    { from: { moduleId: "REVERB1", port: "wave_out" }, to: { moduleId: "MIX1", port: "wave_in1" } },
+
+                    { from: { moduleId: "CLK2", port: "gate_out" }, to: { moduleId: "ADSR2", port: "gate_in" } },
+                    { from: { moduleId: "CLK2", port: "gate_out" }, to: { moduleId: "ADSR3", port: "gate_in" } },
+                    { from: { moduleId: "ADSR2", port: "cv_out" }, to: { moduleId: "MATH2_1", port: "a" } },
+                    { from: { moduleId: "MATH2_1", port: "cv_out" }, to: { moduleId: "VCO2", port: "cv_in" } },
+                    { from: { moduleId: "VCO2", port: "wave_out" }, to: { moduleId: "VCA2", port: "wave_in" } },
+                    { from: { moduleId: "ADSR3", port: "cv_out" }, to: { moduleId: "VCA2", port: "cv_in" } },
+                    { from: { moduleId: "VCA2", port: "wave_out" }, to: { moduleId: "MIX2", port: "wave_in1" } },
+
+                    { from: { moduleId: "PAT2", port: "cv_out" }, to: { moduleId: "VCO3", port: "cv_in" } },
+                    { from: { moduleId: "PAT2", port: "gate_out" }, to: { moduleId: "ADSR4", port: "gate_in" } },
+                    { from: { moduleId: "VCO3", port: "wave_out" }, to: { moduleId: "VCA3", port: "wave_in" } },
+                    { from: { moduleId: "ADSR4", port: "cv_out" }, to: { moduleId: "VCA3", port: "cv_in" } },
+                    { from: { moduleId: "VCA3", port: "wave_out" }, to: { moduleId: "MIX2", port: "wave_in2" } },
+
+                    { from: { moduleId: "NOISE1", port: "wave_out" }, to: { moduleId: "VCF2", port: "wave_in" } },
+                    { from: { moduleId: "LFO2", port: "cv_out" }, to: { moduleId: "VCF2", port: "cv_in" } },
+                    { from: { moduleId: "VCF2", port: "wave_out" }, to: { moduleId: "VCA4", port: "wave_in" } },
+                    { from: { moduleId: "VCA4", port: "wave_out" }, to: { moduleId: "DELAY2", port: "wave_in" } },
+                    { from: { moduleId: "DELAY2", port: "wave_out" }, to: { moduleId: "MIX1", port: "wave_in2" } },
+
+                    { from: { moduleId: "CLK3", port: "gate_out" }, to: { moduleId: "ADSR5", port: "gate_in" } },
+                    { from: { moduleId: "NOISE2", port: "wave_out" }, to: { moduleId: "VCF3", port: "wave_in" } },
+                    { from: { moduleId: "VCF3", port: "wave_out" }, to: { moduleId: "VCA5", port: "wave_in" } },
+                    { from: { moduleId: "ADSR5", port: "cv_out" }, to: { moduleId: "VCA5", port: "cv_in" } },
+                    { from: { moduleId: "VCA5", port: "wave_out" }, to: { moduleId: "MIX1", port: "wave_in3" } },
+
+                    { from: { moduleId: "CLK4", port: "gate_out" }, to: { moduleId: "ADSR6", port: "gate_in" } },
+                    { from: { moduleId: "FOLD1", port: "wave_out" }, to: { moduleId: "VCA6", port: "wave_in" } },
+                    { from: { moduleId: "ADSR6", port: "cv_out" }, to: { moduleId: "VCA6", port: "cv_in" } },
+                    { from: { moduleId: "VCA6", port: "wave_out" }, to: { moduleId: "MIX1", port: "wave_in4" } },
+
+                    { from: { moduleId: "MIX1", port: "wave_out" }, to: { moduleId: "MIX2", port: "wave_in3" } },
+                    { from: { moduleId: "MIX2", port: "wave_out" }, to: { moduleId: "SPK1", port: "wave_in" } }
+                ]
+            }
+        }
     }
 });

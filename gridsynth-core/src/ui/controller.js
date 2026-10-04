@@ -34,7 +34,8 @@ export class UIController {
             '03_WAVEFOLD_VERB',
             '04_RANDOM_SH_DELAY',
             '05_SUBPATCH_MULTI_GROOVE',
-            '06_STRUDEL_HOUSE_BASSLINE'
+            '06_STRUDEL_HOUSE_BASSLINE',
+            '07_DUB_TECHNO_DEEP_SPACE'
         ];
         this.demoAccordionOpen = false;
         this.pageStack = [];
