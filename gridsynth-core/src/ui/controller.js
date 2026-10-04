@@ -29,12 +29,12 @@ export class UIController {
         this._toastTimer = null;
         this._lastUiUpdate = 0;
         this.DEMO_KEYS = [
-            'DEMO01_DELAY_TECHNO',
-            'DEMO02_KEYBOARD_LEAD',
-            'DEMO03_WAVEFOLD_VERB',
-            'DEMO04_RANDOM_SH_DELAY',
-            'DEMO05_MULTI_GROOVE',
-            'DEMO06_HOUSE_BASSLINE'
+            '01_DELAY_TECHNO',
+            '02_KEYBOARD_LEAD',
+            '03_WAVEFOLD_VERB',
+            '04_RANDOM_SH_DELAY',
+            '05_SUBPATCH_MULTI_GROOVE',
+            '06_STRUDEL_HOUSE_BASSLINE'
         ];
         this.demoAccordionOpen = false;
         this.pageStack = [];
@@ -58,8 +58,12 @@ export class UIController {
         }
 
         // Clean up obsolete/old legacy demo keys
-        ['DEMO_01', 'DEMO_02', 'DEMO_03', 'DEMO_04', 'DEMO_05', 'DEMO_06', 'DEMO_07',
-         'DEMO_01_DELAY_TECHNO', 'DEMO_02_KEYBOARD_LEAD', 'DEMO_03_WAVEFOLD_VERB', 'DEMO_04_RANDOM_SH_DELAY', 'DEMO_05_MULTI_GROOVE', 'DEMO_06_HOUSE_BASSLINE'].forEach(oldKey => {
+        const oldLegacyKeys = [
+            'DEMO_01', 'DEMO_02', 'DEMO_03', 'DEMO_04', 'DEMO_05', 'DEMO_06', 'DEMO_07',
+            'DEMO_01_DELAY_TECHNO', 'DEMO_02_KEYBOARD_LEAD', 'DEMO_03_WAVEFOLD_VERB', 'DEMO_04_RANDOM_SH_DELAY', 'DEMO_05_MULTI_GROOVE', 'DEMO_06_HOUSE_BASSLINE',
+            'DEMO01_DELAY_TECHNO', 'DEMO02_KEYBOARD_LEAD', 'DEMO03_WAVEFOLD_VERB', 'DEMO04_RANDOM_SH_DELAY', 'DEMO05_MULTI_GROOVE', 'DEMO06_HOUSE_BASSLINE'
+        ];
+        oldLegacyKeys.forEach(oldKey => {
             delete this.presets[oldKey];
         });
 
@@ -70,8 +74,6 @@ export class UIController {
 
         try {
             const order = JSON.parse(localStorage.getItem('gridsynth_preset_order')) || [];
-            const oldLegacyKeys = ['DEMO_01', 'DEMO_02', 'DEMO_03', 'DEMO_04', 'DEMO_05', 'DEMO_06', 'DEMO_07',
-                'DEMO_01_DELAY_TECHNO', 'DEMO_02_KEYBOARD_LEAD', 'DEMO_03_WAVEFOLD_VERB', 'DEMO_04_RANDOM_SH_DELAY', 'DEMO_05_MULTI_GROOVE', 'DEMO_06_HOUSE_BASSLINE'];
             this.presetOrder = order.filter(k => this.presets[k] && !oldLegacyKeys.includes(k));
             this.DEMO_KEYS.forEach(k => {
                 if (!this.presetOrder.includes(k)) this.presetOrder.push(k);
@@ -80,7 +82,7 @@ export class UIController {
             this.presetOrder = [...this.DEMO_KEYS];
         }
 
-        this.currentPresetKey = this.presets['DEMO01_DELAY_TECHNO'] ? 'DEMO01_DELAY_TECHNO' : (this.presetOrder[0] || Object.keys(this.presets)[0]);
+        this.currentPresetKey = this.presets['01_DELAY_TECHNO'] ? '01_DELAY_TECHNO' : (this.presetOrder[0] || Object.keys(this.presets)[0]);
 
         this.initDOM();
         this.bindGlobalEvents();

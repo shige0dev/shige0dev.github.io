@@ -1,5 +1,5 @@
 export const getDefaultPresets = () => ({
-    'DEMO01_DELAY_TECHNO': {
+    '01_DELAY_TECHNO': {
         bpm: 120,
         pages: {
             "0": {
@@ -37,7 +37,7 @@ export const getDefaultPresets = () => ({
             }
         }
     },
-    'DEMO02_KEYBOARD_LEAD': {
+    '02_KEYBOARD_LEAD': {
         bpm: 120,
         pages: {
             "0": {
@@ -68,7 +68,7 @@ export const getDefaultPresets = () => ({
             }
         }
     },
-    'DEMO03_WAVEFOLD_VERB': {
+    '03_WAVEFOLD_VERB': {
         bpm: 120,
         pages: {
             "0": {
@@ -102,7 +102,7 @@ export const getDefaultPresets = () => ({
             }
         }
     },
-    'DEMO04_RANDOM_SH_DELAY': {
+    '04_RANDOM_SH_DELAY': {
         bpm: 120,
         pages: {
             "0": {
@@ -175,7 +175,7 @@ export const getDefaultPresets = () => ({
             }
         }
     },
-    'DEMO05_MULTI_GROOVE': {
+    '05_SUBPATCH_MULTI_GROOVE': {
         bpm: 128,
         pages: {
             "0": {
@@ -379,7 +379,7 @@ export const getDefaultPresets = () => ({
             }
         }
     },
-    'DEMO06_HOUSE_BASSLINE': {
+    '06_STRUDEL_HOUSE_BASSLINE': {
         bpm: 120,
         pages: {
             "0": {
